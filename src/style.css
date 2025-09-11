@@ -76,8 +76,6 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
-  color: inherit;
   background: none;
   border: none;
   outline: none;
@@ -91,4 +89,52 @@ body {
   font-size: var(--font-size-md);
   font-family: var(--font-family-inter);
   -webkit-font-smoothing: antialiased;
+}
+
+/* header section */
+#header {
+  width: 100%;
+  max-width: 1500px;
+  background-color: var(--color-rainy);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-block: var(--space-sm);
+}
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.top-search-bar {
+  display: flex;
+  align-content: center;
+  gap: var(--space-sm);
+}
+.top-search-bar input {
+  width: 250px;
+  border: 1px solid var(--color-sunny);
+  padding: var(--space-sm);
+  color: var(--color-snowy);
+  border-radius: var(--space-md);
+}
+.top-search-bar input::placeholder {
+  color: var(--color-snowy);
+ 
+}
+
+.search-btn {
+  border: 1px solid var(--color-white);
+  padding: var(--space-sm);
+  border-radius: var(--space-sm);
+  color: var(--color-white);
+}
+
+.nav-bar ul {
+  display: flex;
+  align-items: center;
+}
+.nav-bar ul li {
+  margin-inline: var(--space-sm);
 }
