@@ -1,20 +1,20 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
   /* 🌈 Colors */
-  --color-sunny: #facc15;     /* yellow-400 */
-  --color-clear: #38bdf8;     /* sky-400 */
-  --color-cloudy: #94a3b8;    /* slate-400 */
-  --color-rainy: #3b82f6;     /* blue-600 */
-  --color-stormy: #1e293b;    /* slate-800 */
-  --color-snowy: #f1f5f9;     /* slate-100 */
-  --color-night: #0f172a;     /* slate-900 */
-  --color-text: #111827;      /* gray-900 */
+  --color-sunny: #facc15; /* yellow-400 */
+  --color-clear: #38bdf8; /* sky-400 */
+  --color-cloudy: #94a3b8; /* slate-400 */
+  --color-rainy: #3b82f6; /* blue-600 */
+  --color-stormy: #1e293b; /* slate-800 */
+  --color-snowy: #f1f5f9; /* slate-100 */
+  --color-night: #0f172a; /* slate-900 */
+  --color-text: #111827; /* gray-900 */
   --color-white: #ffffff;
 
   /* 📏 Spacing (margins, paddings, gaps) */
@@ -33,12 +33,12 @@
   --radius-full: 9999px;
 
   /* 🔠 Typography */
-  --font-family-base: 'Inter', sans-serif;
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-md: 1rem;       /* 16px */
-  --font-size-lg: 1.25rem;    /* 20px */
-  --font-size-xl: 1.5rem;     /* 24px */
-  --font-size-2xl: 2rem;      /* 32px */
+  --font-family-inter: "Inter", sans-serif;
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
 
   /* ⏱️ Transitions */
   --transition-fast: 200ms;
@@ -47,7 +47,48 @@
   --ease-smooth: ease-in-out;
 
   /* 🖼️ Shadows */
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.15);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.2);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Coustom Css */
+html {
+  scroll-behavior: smooth;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
+body {
+  background: var(--color-night);
+  color: var(--color-snowy);
+  font-size: var(--font-size-md);
+  font-family: var(--font-family-inter);
+  -webkit-font-smoothing: antialiased;
 }
