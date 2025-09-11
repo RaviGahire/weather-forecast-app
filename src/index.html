@@ -7,6 +7,8 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
     <script src="./app.js" defer></script>
+
+    </script>
 </head>
 
 
@@ -25,27 +27,34 @@
                 <button class="search-btn">Serach</button>
             </form>
         </div>
+
+        <!-- Hamburger Icon (for mobile) -->
+        <div class="hamburger" id="hamburger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="c42e398b">
+                    <rect id="029ba13d" x="5" y="4.6001" width="3.2" height="3.2" rx="1.6" fill="white"></rect>
+                    <rect id="ba1641ac" x="10" y="5.40015" width="9" height="1.6" rx="0.8" fill="white"></rect>
+                    <rect id="b522a1b6" x="5" y="16.2002" width="3.2" height="3.2" rx="1.6" fill="white"></rect>
+                    <rect id="bdf2996f" x="10" y="17.0002" width="9" height="1.6" rx="0.8" fill="white"></rect>
+                    <rect id="50215405" x="15.8" y="10.4004" width="3.2" height="3.2" rx="1.6" fill="white"></rect>
+                    <rect id="7e191012" x="5" y="11.2002" width="9" height="1.6" rx="0.8" fill="white"></rect>
+                </g>
+            </svg>
+        </div>
+
         <!-- navigation Bar -->
-        <nav class="nav-bar">
+        <nav class="nav-bar ">
             <ul>
-                <a href="#">
-                    <li>Home</li>
-                </a>
-                <a href="#">
-                    <li>Weather Updates</li>
-                </a>
-                <a href="#">
-                    <li>Weather News</li>
-                </a>
-                <a href="#">
-                    <li>About Us</li>
-                </a>
-                <a href="#">
-                    <li>Contact Us</li>
-                </a>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Weather Updates</a></li>
+                <li><a href="#">Weather News</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
-        <!-- Modes/Theme -->
+
+
+        <!-- Theme Toggle -->
         <div class="dark-mode">
             <img src="/assets/icons/sun-icon.svg" alt="theme-change-icon">
         </div>

@@ -121,7 +121,6 @@ body {
 }
 .top-search-bar input::placeholder {
   color: var(--color-snowy);
- 
 }
 
 .search-btn {
@@ -137,4 +136,81 @@ body {
 }
 .nav-bar ul li {
   margin-inline: var(--space-sm);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+/* Responsive css */
+/* Extra small devices (phones, portrait) */
+@media (max-width: 480px) {
+  .app-logo p {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Small devices (phones, landscape) */
+@media (max-width: 640px) {
+  .top-search-bar {
+    display: none;
+  }
+}
+
+/* Medium devices (tablets, portrait) */
+@media (max-width: 768px) {
+  #header {
+    justify-content: space-between;
+    align-content: center;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  /* Navbar */
+  .dark-mode {
+    display: none;
+  }
+  .nav-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+  }
+  .nav-bar ul {
+    flex-direction: column;
+    font-size: var(--font-size-sm);
+    align-items: start;
+    gap: var(--space-xl);
+    background: var(--color-clear);
+    padding: 15px;
+    border-radius: 6px;
+  }
+
+  .nav-bar.active {
+    display: block;
+  }
+  .nav-bar.hide {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  /* Menu-btn */
+  .menu {
+    display: block;
+  }
+}
+
+/* Large devices (tablets, landscape / small laptops) */
+@media (max-width: 1024px) {
+}
+
+/* Extra large devices (desktops) */
+@media (max-width: 1280px) {
+}
+
+/* 2K Screens */
+@media (max-width: 1536px) {
 }
