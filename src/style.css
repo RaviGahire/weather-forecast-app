@@ -172,10 +172,70 @@ body {
   transform: translateY(-1.5px);
 }
 
+/* ==============weather-widget================ */
+
+.weather-widget {
+  width: 100%;
+  max-width: 1500px;
+  margin: auto;
+  /* background-image: url(https://openweathermap.org/img/wn/02d@2x.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+.dwu-container {
+  margin-top: var(--space-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-info-card {
+  min-height: 318px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #38bdf8;
+  padding: var(--space-lg);
+}
+
+.location-and-city {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.weather-type {
+  padding-block: var(--space-xl);
+  font-size: var(--font-size-2xl);
+}
+.temperature-info {
+  font-size: var(--font-size-2xl);
+}
+.date-and-day {
+  font-weight: 300;
+}
+
+.weather-image {
+  width: 320px;
+}
+.weather-image img {
+  width: 100%;
+}
+
 /*==================== Responsive css==============================*/
 @media (max-width: 540px) {
   .nav-items {
     font-size: var(--font-size-sm);
+  }
+  .weather-info-card {
+    width: 100%;
+    margin-inline: var(--space-md);
+  }
+  .weather-image {
+    display: none;
   }
 }
 
@@ -236,6 +296,10 @@ body {
   .close-menu-btn {
     display: block;
   }
+  /* .dwu-container */
+  .dwu-container {
+    margin-top: 80px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -271,6 +335,9 @@ body {
     left: 10px;
     padding: 0;
     margin: 0;
+  }
+  .dwu-container {
+    justify-content: space-around;
   }
 }
 
