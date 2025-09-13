@@ -225,19 +225,358 @@ body {
   width: 100%;
 }
 
-/* Daashbord */
+/*==================Daashbord===================== */
 .dashboard {
-      display: grid;
-      grid-template-columns: 80px 1fr 320px;
-      gap: var(--spacing-lg);
-      min-height: 100vh;
-      padding: var(--spacing-lg);
-      background: var(--color-stormy);
-    }
+  max-width: 1500px;
+  margin: var(--space-lg) auto;
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--space-lg);
+  height: 100vh;
+}
+/* ==========Aside-right=========== */
+.aside-right {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+/* ========user info=========== */
+.user-info {
+  display: none;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.user-avatar img {
+  width: 100%;
+}
+.vertical-menu {
+  width: 100%;
+}
+.aside-nav {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.aside-right-nav-items a {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  background: green;
+}
+.aside-right-nav-items a:hover {
+  transition: var(--transition-md);
+  background: #000;
+}
 
-   
+/* ==============Activites section=================== */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.card {
+  border-radius: var(--space-lg);
+  padding: var(--space-xl);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
 
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+.main-content h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: 25px;
+  
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.activities-section {
+  background: red;
+}
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+.activity-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.activity-card:hover {
+  transform: scale(1.05) rotate(1deg);
+}
 
+.activity-image {
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-sm);
+}
+
+.activity-card.park .activity-image {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.activity-card.autumn .activity-image {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.activity-card.playground .activity-image {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.activity-card.beach .activity-image {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+/* .activity-card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  opacity: 0.7;
+} */
+
+/* .activity-card.park::before {
+  content: "🌳";
+}
+.activity-card.autumn::before {
+  content: "🍂";
+}
+.activity-card.playground::before {
+  content: "🎠";
+}
+.activity-card.beach::before {
+  content: "🏖️";
+} */
+
+.activity-distance {
+  background: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5568;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==============forecast section=================== */
+.forecast-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-top: 40px;
+}
+
+.temperature-line {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: var(--space-xl);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 206, 84, 0.2) 0%,
+    rgba(255, 171, 64, 0.2) 50%,
+    rgba(129, 236, 236, 0.2) 100%
+  );
+  border-radius: var(--radius-xl);
+}
+
+.temp-point {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+.forecast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 1;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.forecast-item:hover {
+  transform: translateY(-10px);
+}
+
+.forecast-temp {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-clear);
+}
+
+.weather-icon {
+  font-size: 32px;
+  animation: weatherBounce 3s ease-in-out infinite;
+}
+
+@keyframes weatherBounce {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(5deg);
+  }
+}
+
+.forecast-time {
+  font-size: 12px;
+  color: #718096;
+  font-weight: 500;
+}
+/* ==============aside-left section=================== */
+ .weather-details {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .current-time {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .week-forecast {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            border-radius: 15px;
+        }
+
+        .day-item {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .day-item:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .day-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #718096;
+            margin-bottom: 8px;
+        }
+
+        .day-icon {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 14px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .condition-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .condition-item:hover {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transform: translateX(5px);
+        }
+
+        .condition-icon {
+            font-size: 28px;
+            animation: conditionFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes conditionFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-3px) rotate(5deg); }
+            66% { transform: translateY(-3px) rotate(-5deg); }
+        }
+
+        .condition-text {
+            flex: 1;
+        }
+
+        .condition-text div:first-child {
+            font-size: 12px;
+            color: #718096;
+            margin-bottom: 5px;
+        }
+
+        .condition-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+        }
 /*==================== Responsive css==============================*/
 @media (max-width: 540px) {
   .nav-items {
