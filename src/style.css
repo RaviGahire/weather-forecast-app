@@ -225,6 +225,19 @@ body {
   width: 100%;
 }
 
+/* Daashbord */
+.dashboard {
+      display: grid;
+      grid-template-columns: 80px 1fr 320px;
+      gap: var(--spacing-lg);
+      min-height: 100vh;
+      padding: var(--spacing-lg);
+      background: var(--color-stormy);
+    }
+
+   
+
+
 /*==================== Responsive css==============================*/
 @media (max-width: 540px) {
   .nav-items {
