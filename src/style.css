@@ -91,7 +91,6 @@ button {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-
 /* =================Body==================== */
 body {
   background: var(--color-sunny);
@@ -133,7 +132,7 @@ body {
   color: var(--color-white);
   font-size: var(--font-size-lg);
   font-weight: 600;
-  }
+}
 
 /* ===================Search-bar======================= */
 .top-search-bar {
@@ -165,7 +164,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .nav-items {
@@ -175,7 +173,8 @@ body {
   font-weight: 400;
   color: var(--color-white);
   letter-spacing: 1.1px;
-  transition: transform var(--transition-fast) var(--ease-smooth) ,color var(--transition-fast) var(--ease-smooth) ;
+  transition: transform var(--transition-fast) var(--ease-smooth),
+    color var(--transition-fast) var(--ease-smooth);
 }
 .nav-items:hover {
   transform: translateY(-1.5px);
@@ -213,17 +212,16 @@ body {
   align-items: center;
   justify-content: center;
   gap: var(--space-sm);
-  
 }
-.city-name{
+.city-name {
   font-size: var(--font-size-md);
-  font-weight:600;
+  font-weight: 600;
 }
-.svg-icon{
+.svg-icon {
   fill: var(--color-night);
   transition: var(--transition-md);
 }
-.svg-icon:hover{
+.svg-icon:hover {
   fill: var(--color-rainy);
   cursor: pointer;
 }
@@ -231,7 +229,7 @@ body {
 .weather-type {
   padding-block: var(--space-xl);
   font-size: var(--font-size-2xl);
-  font-weight:600 ;
+  font-weight: 600;
 }
 .temperature-info {
   font-size: var(--font-size-2xl);
@@ -239,7 +237,6 @@ body {
 }
 .date-and-day {
   font-weight: 300;
-  
 }
 
 .weather-image {
@@ -282,6 +279,7 @@ body {
 .user-name {
   margin-top: var(--space-xs);
   font-size: var(--font-size-md);
+  font-weight: 600;
 }
 .user-avatar img {
   width: 100%;
@@ -300,6 +298,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
 }
 
 /* ==============Activites section=================== */
@@ -316,6 +316,8 @@ body {
 
 .main-content h3 {
   font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-stormy);
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -351,19 +353,27 @@ body {
 }
 
 .activity-card.park .activity-image {
-  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+  background-image: url(https://media.istockphoto.com/id/841278554/photo/beautiful-morning-light-in-public-park-with-green-grass-field.jpg?s=612x612&w=0&k=20&c=rXOM3Uq9kPbpM5IWnCAnffHOP8KKpVKCJDMuNBlTNls=);
+  background-position: center;
+  background-size: cover;
 }
 
 .activity-card.autumn .activity-image {
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  background-image: url(https://assets.iflscience.com/assets/articleNo/76058/aImg/79028/autumn-meta.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .activity-card.playground .activity-image {
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  background-image: url(https://www.shutterstock.com/image-vector/little-kids-playing-playground-friends-260nw-2558291625.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .activity-card.beach .activity-image {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background-image: url(https://panamajack.com/cdn/shop/articles/bigstock-Beach-Chairs-With-Umbrella-And-129286676.jpg?v=1578502258);
+  background-position: center;
+  background-size: cover;
 }
 
 /* ====== activity-distance ======== */
