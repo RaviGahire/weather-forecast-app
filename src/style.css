@@ -11,7 +11,7 @@
   --color-clear: #38bdf8; /* sky-400 */
   --color-cloudy: #94a3b8; /* slate-400 */
   --color-rainy: #3b82f6; /* blue-600 */
-  --color-stormy: #1e293b; /* slate-800 */
+  --color-stormy: #1e293bb9; /* slate-800 */
   --color-snowy: #f1f5f9; /* slate-100 */
   --color-night: #0f172a; /* slate-900 */
   --color-text: #111827; /* gray-900 */
@@ -108,7 +108,7 @@ body {
   top: 0;
   z-index: 1000;
   width: 100%;
-  background-color: var(--color-rainy);
+  background-color: var(--color-night);
   padding-block: var(--space-md);
 }
 
@@ -118,7 +118,6 @@ body {
   border-radius: var(--radius-md);
   backdrop-filter: blur(10px);
   color: #fff;
-  background-color: #3b83f65f;
   transition: var(--transition-slow);
 }
 
@@ -129,16 +128,16 @@ body {
   justify-content: space-around;
 }
 /* ===================Logo======================= */
-.app-logo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-}
+.app-logo h1 {
+  color: var(--color-white);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  }
 
 /* ===================Search-bar======================= */
 .top-search-bar {
   border-radius: var(--radius-full);
-  border-bottom: 1px solid var(--color-sunny);
+  border-bottom: 1px solid var(--color-snowy);
 }
 
 .top-search-bar form {
@@ -148,10 +147,11 @@ body {
   justify-content: space-between;
 }
 .top-search-bar form input {
+  width: 250px;
   color: var(--color-white);
 }
 .top-search-bar form input::placeholder {
-  color: var(--color-sunny);
+  color: var(--color-snowy);
 }
 
 /* =======Menu icon======== */
@@ -164,7 +164,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
+
 }
 
 .nav-items {
@@ -172,15 +172,16 @@ body {
   padding: var(--space-xs) 0;
   font-size: var(--font-size-sm);
   font-weight: 400;
-  letter-spacing: 1.5px;
-  transition: transform var(--transition-fast) var(--ease-smooth);
+  color: var(--color-white);
+  letter-spacing: 1.1px;
+  transition: transform var(--transition-fast) var(--ease-smooth) ,color var(--transition-fast) var(--ease-smooth) ;
 }
 .nav-items:hover {
   transform: translateY(-1.5px);
+  color: var(--color-cloudy);
 }
 
 /* ==============weather-widget================ */
-
 .weather-widget {
   width: 100%;
   max-width: 1500px;
@@ -294,7 +295,6 @@ body {
 .card {
   border-radius: var(--space-lg);
   padding: var(--space-xl);
-  
 }
 
 .main-content h3 {
@@ -363,7 +363,7 @@ body {
 
 /* ==============forecast section=================== */
 .forecast-section {
-background: transparent;
+  background: transparent;
 }
 
 .forecast-chart {
@@ -443,19 +443,17 @@ background: transparent;
 }
 
 .forecast-time {
-  font-size: 12px;
-  color: #718096;
+  font-size: var(--font-size-sm);
+  color: var(--color-night);
   font-weight: 500;
 }
 /* ==============aside-left section=================== */
 .weather-details {
-
   grid-row: span 4 / span 4;
   grid-column-start: 4;
   grid-row-start: 1;
   border-radius: 25px;
   padding: 30px;
-  
 }
 
 .current-time {
