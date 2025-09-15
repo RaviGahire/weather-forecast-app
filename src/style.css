@@ -599,13 +599,19 @@ body {
   .nav-items {
     font-size: var(--font-size-sm);
   }
+.weather-widget {
+  margin-top: var(--space-sm) !important;
+}
   .weather-info-card {
     width: 100%;
-    margin-inline: var(--space-md);
+    min-height: auto;
+    margin:0;
+    padding: var(--space-sm);
   }
   .weather-image {
     display: none;
   }
+ 
 }
 
 /* Medium devices (tablets, portrait) */
@@ -671,6 +677,61 @@ body {
   }
 
   /* Dashboard */
+   .weather-widget,
+  .weather-dashbord {
+    padding: var(--space-sm);
+  }
+  .dashboard {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+    column-gap: unset;
+  }
+  .aside-right {
+    flex-direction: row;
+  }
+  .user-info {
+    display: none;
+  }
+  .aside-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-block: var(--space-sm);
+  }
+  .aside-nav svg {
+    width: 30px;
+  }
+  .main-content {
+    gap: var(--space-md);
+  }
+  .main-content h3{
+    font-size: var(--font-size-md);
+  }
+.card {
+  padding: var(--space-sm);
+}
+  .activities-section{
+    min-height: unset;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .current-time{
+    font-size: var(--font-size-md);
+  }
+  .current-time{
+    padding: var(--space-sm);
+    margin: var(--space-sm);
+  }
+  .conditions-grid{
+    gap: var(--space-md);
+  }
+  .condition-item{
+    padding: var(--space-sm);
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -711,7 +772,26 @@ body {
     justify-content: space-around;
   }
 
-  /* Dahsbord */
+
+   .weather-widget{
+    margin-top: var(--space-2xl);
+    padding: var(--space-sm);
+   }
+     /* Dahsbord */
+  .weather-dashbord {
+    padding: var(--space-sm);
+  }
+  .dashboard {
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+    column-gap: unset;
+  }
+    .aside-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-block: var(--space-sm);
+  }
 }
 
 @media (max-width: 1200.98px) {
@@ -723,7 +803,60 @@ body {
   .dark-mode-theme {
     display: none;
   }
+
+.weather-widget,
+  .weather-dashbord {
+    padding: var(--space-sm);
+  }
   .dashboard {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    row-gap: var(--space-md);
+    column-gap: unset;
+  }
+  .aside-right {
+    flex-direction: row;
+  }
+  .user-info {
+    display: none;
+  }
+  .aside-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-block: var(--space-sm);
+  }
+  .aside-nav svg {
+    width: 30px;
+  }
+  .main-content {
+    gap: var(--space-md);
+  }
+  .main-content h3{
+    font-size: var(--font-size-md);
+  }
+.card {
+  padding: var(--space-sm);
+}
+  .activities-section{
+    min-height: unset;
+  }
+
+  .activities-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+
+  .current-time{
+    font-size: var(--font-size-md);
+  }
+  .current-time{
+    padding: var(--space-sm);
+    margin: var(--space-sm);
+  }
+  .conditions-grid{
+    gap: var(--space-md);
+  }
+  .condition-item{
+    padding: var(--space-sm);
   }
 }
