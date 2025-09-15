@@ -317,7 +317,7 @@ body {
 .main-content h3 {
   font-size: var(--font-size-lg);
   font-weight: 600;
-  color: var(--color-stormy);
+  color: var(--color-white);
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -403,7 +403,7 @@ body {
 
 .temperature-line {
   position: absolute;
-  top: 20px;
+  top: 10px;
   left: 0;
   right: 0;
   height: var(--space-xl);
@@ -414,7 +414,7 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  background: var(--color-clear);
+  background: var(--color-snowy);
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
@@ -427,7 +427,7 @@ body {
     transform: translateY(-50%) scale(1);
   }
   50% {
-    transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.5);
   }
 }
 
@@ -438,7 +438,7 @@ body {
   gap: 10px;
   z-index: 1;
   padding: 10px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-slow);
 }
 
 .forecast-item:hover {
@@ -448,7 +448,7 @@ body {
 .forecast-temp {
   font-size: 18px;
   font-weight: 700;
-  color: var(--color-clear);
+  color: var(--color-sunny);
 }
 
 .weather-icon {
@@ -471,8 +471,8 @@ body {
 
 .forecast-time {
   font-size: var(--font-size-sm);
-  color: var(--color-night);
-  font-weight: 500;
+  color: var(--color-white);
+  font-weight: 400;
 }
 /* ==============aside-left section=================== */
 .weather-details {
@@ -487,12 +487,8 @@ body {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--color-snowy);
   margin-bottom: 25px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .week-forecast {
@@ -520,7 +516,7 @@ body {
 .day-name {
   font-size: 12px;
   font-weight: 600;
-  color: #718096;
+  color: var(--color-night);
   margin-bottom: 8px;
 }
 
@@ -528,12 +524,13 @@ body {
   font-size: 24px;
 }
 
-h4 {
+.heading-text {
   font-size: 14px;
-  color: #718096;
+  color: var(--color-white);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
+  margin-bottom: var(--space-md);
 }
 
 .conditions-grid {
@@ -588,15 +585,14 @@ h4 {
 }
 
 .condition-text div:first-child {
-  font-size: 12px;
-  color: #718096;
-  margin-bottom: 5px;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-sm);
 }
 
 .condition-value {
   font-size: 18px;
   font-weight: 700;
-  color: #2d3748;
+  color: var(--color-snowy);
 }
 /*==================== Responsive css==============================*/
 @media (max-width: 540px) {
