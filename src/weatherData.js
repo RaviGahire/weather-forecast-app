@@ -26,17 +26,29 @@ export async function getCityName(lat, lon) {
 
 
 
-
+const currTemp = document.querySelector('.current-temp');
+const weather_type = document.querySelector('.weather-type')
 
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
     try {
-        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days=3`);
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
         const data = await response.json();
-        console.log(data  )
+        currTemp.innerText = data.current_weather.temperature
+
+
+
+
+
+
+
+
+
+      // For lat long
         console.log('Geolocation Function', lat)
         console.log('Geolocation Function', lon)
+        console.log(data)
         // console.log('API DATA', data)
     } catch (err) {
         console.log(err)

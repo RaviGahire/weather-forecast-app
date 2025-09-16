@@ -27,3 +27,21 @@ window.addEventListener('scroll', () => {
 });
 
 
+const currDay = document.querySelector('.day')
+const currDate = document.querySelector('.date')
+const currTime = document.querySelector('.time')
+// Current day date and time 
+const today = new Date();
+
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+const dayName = days[today.getDay()];
+ currDay.innerText =  dayName
+
+const date =  `${today.getDate()} - ${today.getMonth()} - ${today.getFullYear()}`
+currDate.innerText = date
+
+setInterval(()=>{
+    const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
+currTime.innerText = time
+},1000)
