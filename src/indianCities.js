@@ -78,4 +78,4 @@ const indianCities = [
     { city: "Mussoorie", state: "Uttarakhand", lat: 30.4598, lon: 78.0664 }
 ];
 
-export {indianCities as cityData }
+export {indianCities as citydata }

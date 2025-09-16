@@ -3,12 +3,12 @@ import { getCityName } from "./weatherData.js";
 
 // User Location 
 const options = {
-    enableHighAccuracy: true, 
-    timeout: 5000,           
-    maximumAge: 70000          
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 70000
 };
 
- function getLocation() {
+function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
@@ -19,10 +19,12 @@ function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
+    //passed as to get cityname using coordinates
+    getCityName(latitude, longitude)
     // Passed as args to the get correct coordinates of user
     getWeatherData(latitude, longitude)
-    //passed as to get cityname using coordinates
-    getCityName(latitude,longitude)
+
+
 }
 
 
@@ -46,5 +48,5 @@ function error(error) {
 }
 
 //Exported 
-export {getLocation as userLocation}
+export { getLocation as userLocation }
 
