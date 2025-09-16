@@ -29,3 +29,4 @@ const weatherCodes = {
     96: 'Thunderstorm with hail ',
     99: 'Thunderstorm with heavy hail '
 };
+export {weatherCodes as codes}

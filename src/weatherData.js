@@ -20,7 +20,7 @@ export async function getCityName(lat, lon) {
         myState.innerText = foundCity.state
         // console.log(foundCity.city);
     } else {
-          mycity.innerText = 'City Not Found in Data'
+        mycity.innerText = 'City Not Found in Data'
     }
 }
 
@@ -32,9 +32,9 @@ export async function getCityName(lat, lon) {
 // Weather API Data
 export async function getWeatherData(lat, lon) {
     try {
-        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}`);
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relative_humidity_2m,precipitation,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_sum&forecast_days=3`);
         const data = await response.json();
-
+        console.log(data  )
         console.log('Geolocation Function', lat)
         console.log('Geolocation Function', lon)
         // console.log('API DATA', data)

@@ -4,8 +4,8 @@ import { getCityName } from "./weatherData.js";
 // User Location 
 const options = {
     enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 70000
+    timeout: 10000,
+    maximumAge: 500000
 };
 
 function getLocation() {
