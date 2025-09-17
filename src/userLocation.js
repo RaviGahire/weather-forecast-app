@@ -19,9 +19,9 @@ function success(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
 
-    //passed as to get cityname using coordinates
+    //passed to get cityname using coordinates
     getCityName(latitude, longitude)
-    // Passed as args to the get correct coordinates of user
+    // Passed args to the get correct coordinates of user
     getWeatherData(latitude, longitude)
 
 

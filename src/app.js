@@ -41,7 +41,7 @@ const dayName = days[today.getDay()];
 const date =  `${today.getDate()} - ${today.getMonth()} - ${today.getFullYear()}`
 currDate.innerText = date
 
-setInterval(()=>{
+
     const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
 currTime.innerText = time
-},1000)
+
