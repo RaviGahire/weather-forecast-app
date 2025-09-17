@@ -32,13 +32,12 @@ const currDate = document.querySelector('.date')
 const currTime = document.querySelector('.time')
 // Current day date and time 
 const today = new Date();
-
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const dayName = days[today.getDay()];
 currDay.innerText = dayName
 
-const date = `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`
+const date = `${today.getDate()}-${today.getMonth() + 1}-${today.getFullYear()}`
 currDate.innerText = date
 
 

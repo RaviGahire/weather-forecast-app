@@ -9,6 +9,7 @@ const options = {
 };
 
 function getLocation() {
+    
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(success, error, options);
     } else {

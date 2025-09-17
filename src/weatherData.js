@@ -26,9 +26,7 @@ export async function getCityName(lat, lon) {
         mycity.innerText = 'City Not Found in Data'
     }
 }
-
-
-
+// Weathe Widget section
 const currTemp = document.querySelector('.current-temp');
 const weather_type = document.querySelector('.weather-type')
 const dwu_container = document.querySelector('.dwu-container')
@@ -36,9 +34,6 @@ const weatherImageContainer = document.querySelector('.weather-image')
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
-
-
-
     try {
         const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
         const data = await response.json();
@@ -67,6 +62,7 @@ export async function getWeatherData(lat, lon) {
         console.log('Geolocation Function', lon)
         console.log(data)
         // console.log('API DATA', data)
+
     } catch (err) {
         console.log(err)
     }

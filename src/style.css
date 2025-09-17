@@ -90,6 +90,20 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+.overlay {
+  position: fixed;              /* stay on top of page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark */
+  backdrop-filter: blur(8px);     /* blur background */
+  -webkit-backdrop-filter: blur(8px); /* for Safari */
+  display: flex;
+  justify-content: center;       /* center content horizontally */
+  align-items: center;           /* center content vertically */
+  z-index: 999;                  /* above everything */
+}
 
 /* =================Body==================== */
 body {
@@ -186,18 +200,16 @@ body {
   width: 100%;
   max-width: 1500px;
   margin: auto;
- 
 }
 .dwu-container {
   margin-top: var(--space-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
-   /* background-image: url(https://imgs.search.brave.com/ASEfzht0xmly47hykU06hqSFNJhaX3UFXF2l--fGW9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NzgyNzEyOC9waG90/by9sYXduLWJ5LXNl/YS1hdC1zdW5zZXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5lZjllVGVoNVo2/RXRfa2dDblhuc19s/WER5ZnYtenZ2MXB6/Zkx6QlhBbUU9); */
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+  background-size: 100% 100%;
+  color: var(--color-white);
 }
 
 .weather-info-card {
@@ -215,15 +227,15 @@ body {
   gap: var(--space-sm);
 }
 .city-name {
-    font-size: var(--font-size-md);
+  font-size: var(--font-size-md);
   font-weight: 600;
 }
 .svg-icon {
-  fill: var(--color-night);
+  fill: var(--color-white);
   transition: var(--transition-md);
 }
 .svg-icon:hover {
-  fill: var(--color-rainy);
+  fill: var(--color-sunny);
   cursor: pointer;
 }
 
@@ -600,19 +612,18 @@ body {
   .nav-items {
     font-size: var(--font-size-sm);
   }
-.weather-widget {
-  margin-top: var(--space-sm) !important;
-}
+  .weather-widget {
+    margin-top: var(--space-sm) !important;
+  }
   .weather-info-card {
     width: 100%;
     min-height: auto;
-    margin:0;
+    margin: 0;
     padding: var(--space-sm);
   }
   .weather-image {
     display: none;
   }
- 
 }
 
 /* Medium devices (tablets, portrait) */
@@ -678,7 +689,7 @@ body {
   }
 
   /* Dashboard */
-   .weather-widget,
+  .weather-widget,
   .weather-dashbord {
     padding: var(--space-sm);
   }
@@ -705,13 +716,13 @@ body {
   .main-content {
     gap: var(--space-md);
   }
-  .main-content h3{
+  .main-content h3 {
     font-size: var(--font-size-md);
   }
-.card {
-  padding: var(--space-sm);
-}
-  .activities-section{
+  .card {
+    padding: var(--space-sm);
+  }
+  .activities-section {
     min-height: unset;
   }
 
@@ -720,17 +731,17 @@ body {
     gap: var(--space-sm);
   }
 
-  .current-time{
+  .current-time {
     font-size: var(--font-size-md);
   }
-  .current-time{
+  .current-time {
     padding: var(--space-sm);
     margin: var(--space-sm);
   }
-  .conditions-grid{
+  .conditions-grid {
     gap: var(--space-md);
   }
-  .condition-item{
+  .condition-item {
     padding: var(--space-sm);
   }
 }
@@ -773,12 +784,11 @@ body {
     justify-content: space-around;
   }
 
-
-   .weather-widget{
+  .weather-widget {
     margin-top: var(--space-2xl);
     padding: var(--space-sm);
-   }
-     /* Dahsbord */
+  }
+  /* Dahsbord */
   .weather-dashbord {
     padding: var(--space-sm);
   }
@@ -787,7 +797,7 @@ body {
     row-gap: var(--space-md);
     column-gap: unset;
   }
-    .aside-nav {
+  .aside-nav {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
@@ -805,7 +815,7 @@ body {
     display: none;
   }
 
-.weather-widget,
+  .weather-widget,
   .weather-dashbord {
     padding: var(--space-sm);
   }
@@ -832,13 +842,13 @@ body {
   .main-content {
     gap: var(--space-md);
   }
-  .main-content h3{
+  .main-content h3 {
     font-size: var(--font-size-md);
   }
-.card {
-  padding: var(--space-sm);
-}
-  .activities-section{
+  .card {
+    padding: var(--space-sm);
+  }
+  .activities-section {
     min-height: unset;
   }
 
@@ -847,17 +857,17 @@ body {
     gap: var(--space-sm);
   }
 
-  .current-time{
+  .current-time {
     font-size: var(--font-size-md);
   }
-  .current-time{
+  .current-time {
     padding: var(--space-sm);
     margin: var(--space-sm);
   }
-  .conditions-grid{
+  .conditions-grid {
     gap: var(--space-md);
   }
-  .condition-item{
+  .condition-item {
     padding: var(--space-sm);
   }
 }
