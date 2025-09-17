@@ -210,11 +210,10 @@ body {
 .location-and-city {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--space-sm);
 }
 .city-name {
-  font-size: var(--font-size-md);
+    font-size: var(--font-size-md);
   font-weight: 600;
 }
 .svg-icon {
@@ -229,14 +228,14 @@ body {
 .weather-type {
   padding-block: var(--space-xl);
   font-size: var(--font-size-2xl);
-  font-weight: 600;
+  font-weight: 400;
 }
 .temperature-info {
   font-size: var(--font-size-2xl);
   font-weight: 600;
 }
 .date-and-day {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .weather-image {

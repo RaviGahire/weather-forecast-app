@@ -38,10 +38,10 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const dayName = days[today.getDay()];
  currDay.innerText =  dayName
 
-const date =  `${today.getDate()} - ${today.getMonth()} - ${today.getFullYear()}`
+const date =  `${today.getDate()}-${today.getMonth()}-${today.getFullYear()}`
 currDate.innerText = date
 
 
-    const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
+    const time = `${today.getHours()}:${today.getMinutes()}`
 currTime.innerText = time
 
