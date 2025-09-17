@@ -47,8 +47,7 @@ currTime.innerText = time
 
 
 // Widget icon and background images object
-
-const weatherAssets = {
+export const weatherAssets = {
     0: { // Clear sky
         label: "Clear Sky",
         icon: "/assets/icons/sun-icon.svg",
@@ -111,3 +110,4 @@ const weatherAssets = {
         bgImg: "https://imgs.search.brave.com/lgmX3nH79v9DoBJI-F-rBkiy7HGGnRn2lk7OAsjq8KI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zb3V0/aGVybnBsYWluc3Bo/b3RvZ3JhcGh5LmNv/bS9jZG4vc2hvcC9m/aWxlcy9kYXJrbmVz/cy1mYWxscy1saWdo/dG5pbmctc3Rvcm0t/dGh1bmRlcnN0b3Jt/LXdlYXRoZXItbmln/aHQta2Fuc2FzLW1v/b2R5LWxhbmRzY2Fw/ZS1waG90b2dyYXBo/eS1wcmludC5qcGc_/dj0xNzU2MTk4NTQw/JndpZHRoPTUzMw"
     }
 };
+

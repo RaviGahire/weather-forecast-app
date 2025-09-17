@@ -1,6 +1,7 @@
 import { citydata } from "./indianCities.js";
 import { userLocation } from "./userLocation.js";
 import { codes } from "./weatherCodes.js";
+import { weatherAssets as assets } from "./app.js";
 
 const mycity = document.querySelector('.city-name')
 const myState = document.querySelector('.state-name')
@@ -30,7 +31,8 @@ export async function getCityName(lat, lon) {
 
 const currTemp = document.querySelector('.current-temp');
 const weather_type = document.querySelector('.weather-type')
-
+const dwu_container = document.querySelector('.dwu-container')
+const weatherImageContainer = document.querySelector('.weather-image')
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
@@ -44,14 +46,21 @@ export async function getWeatherData(lat, lon) {
 
         // Weather Code 
         const apiCode = data.current_weather.weathercode;
-        const entries = Object.entries(codes)
-        const x = entries.forEach(([keys, value]) => {
+        const entries = Object.entries(codes);
+        entries.forEach(([keys, value]) => {
             if (Number(keys) === apiCode) {
                 weather_type.innerText = value
             }
         })
 
-
+        // Widget bg-img and icon
+        const widgetAssets = Object.entries(assets);
+        widgetAssets.forEach(([keys, val]) => {
+            if (Number(keys) === apiCode) {
+                dwu_container.style.backgroundImage = `url(${val.bgImg})`;
+                weatherImageContainer.innerHTML = `<img src="${val.icon}" alt="weathertype-icon">`
+            }
+        })
 
         // For lat long
         console.log('Geolocation Function', lat)

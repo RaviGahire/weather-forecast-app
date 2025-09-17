@@ -186,16 +186,18 @@ body {
   width: 100%;
   max-width: 1500px;
   margin: auto;
-  /* background-image: url(https://openweathermap.org/img/wn/02d@2x.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
+ 
 }
 .dwu-container {
   margin-top: var(--space-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
+   /* background-image: url(https://imgs.search.brave.com/ASEfzht0xmly47hykU06hqSFNJhaX3UFXF2l--fGW9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NzgyNzEyOC9waG90/by9sYXduLWJ5LXNl/YS1hdC1zdW5zZXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5lZjllVGVoNVo2/RXRfa2dDblhuc19s/WER5ZnYtenZ2MXB6/Zkx6QlhBbUU9); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .weather-info-card {
