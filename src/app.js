@@ -31,7 +31,7 @@ const currDay = document.querySelector('.day')
 const currDate = document.querySelector('.date')
 const currTime = document.querySelector('.time')
 // Current day date and time 
-const today = new Date();
+export const today = new Date();
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const dayName = days[today.getDay()];
@@ -101,7 +101,7 @@ export const weatherAssets = {
     95: { // Thunderstorm
         label: "Thunderstorm",
         icon: "/assets/icons/weather-4.svg",
-        bgImg: "/assets/images/thunderstorm-bg.jpg"
+        bgImg: "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     99: { // Thunderstorm with hail
         label: "Thunderstorm with Hail",
