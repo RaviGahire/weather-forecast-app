@@ -86,8 +86,14 @@ export async function getWeatherData(lat, lon) {
     });
 
     //UVindex
-    let UV = data.hourly.UV_index;
-  
+    let UV = data.hourly.uv_index;
+    const UV_index = Object.entries(UV)
+    UV_index.forEach(([keys, val]) => {
+      if (+keys === hr.getHours()) {
+        UVIndex.innerHTML = `<span>${val}</span>`
+      }
+    })
+ 
 
 
     // For lat long
