@@ -90,20 +90,7 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-.overlay {
-  position: fixed;              /* stay on top of page */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* semi-transparent dark */
-  backdrop-filter: blur(8px);     /* blur background */
-  -webkit-backdrop-filter: blur(8px); /* for Safari */
-  display: flex;
-  justify-content: center;       /* center content horizontally */
-  align-items: center;           /* center content vertically */
-  z-index: 999;                  /* above everything */
-}
+
 
 /* =================Body==================== */
 body {
@@ -200,6 +187,7 @@ body {
   width: 100%;
   max-width: 1500px;
   margin: auto;
+
 }
 .dwu-container {
   margin-top: var(--space-md);

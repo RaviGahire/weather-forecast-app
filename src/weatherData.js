@@ -37,6 +37,9 @@ const windSpeed = document.querySelector(".wind");
 const cor = document.querySelector(".chance-of-rain");
 const UVIndex = document.querySelector('.UV-index');
 
+// 24hr forecast
+const forecastTemp = document.querySelectorAll('.forecast-temp')
+
 // Weather API Data
 export async function getWeatherData(lat, lon) {
   try {
@@ -93,7 +96,40 @@ export async function getWeatherData(lat, lon) {
         UVIndex.innerHTML = `<span>${val}</span>`
       }
     })
- 
+
+    // 24hr forecast 
+let nowTemp =  document.querySelector('.forecast-temp-now')
+    Object.entries(data.hourly.apparent_temperature).forEach(([keys, val]) => {
+      console.log(keys,val);
+      if(+keys === hr.getHours()){
+       nowTemp.innerText = val
+      }
+      // if (keys === '0') {
+      //   console.log('12 am', keys)
+      // }
+      if (keys === '3') {
+        console.log('3 am', keys)
+      }
+      if (keys === '6') {
+        console.log('6 am', keys)
+      }
+      if (keys === '9') {
+        console.log('9 am', keys)
+      }
+      if (keys === '12') {
+        console.log('12 pm', keys)
+      }
+      if (keys === '15') {
+        console.log('3 pm', keys)
+      }
+      if (keys === '18') {
+        console.log('6 pm', keys)
+      }
+      if (keys === '21') {
+        console.log('9 pm', keys)
+      }
+    })
+
 
 
     // For lat long
