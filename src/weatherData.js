@@ -35,10 +35,10 @@ const GMT_time = document.querySelector(".current-time");
 const realFeel = document.querySelector(".real-feel");
 const windSpeed = document.querySelector(".wind");
 const cor = document.querySelector(".chance-of-rain");
-const UVIndex = document.querySelector('.UV-index');
+const UVIndex = document.querySelector(".UV-index");
 
 // 24hr forecast
-const forecastTemp = document.querySelectorAll('.forecast-temp')
+const forecastTemp = document.querySelectorAll(".forecast-temp");
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
@@ -90,47 +90,49 @@ export async function getWeatherData(lat, lon) {
 
     //UVindex
     let UV = data.hourly.uv_index;
-    const UV_index = Object.entries(UV)
+    const UV_index = Object.entries(UV);
     UV_index.forEach(([keys, val]) => {
       if (+keys === hr.getHours()) {
-        UVIndex.innerHTML = `<span>${val}</span>`
+        UVIndex.innerHTML = `<span>${val}</span>`;
       }
-    })
+    });
 
-    // 24hr forecast 
-let nowTemp =  document.querySelector('.forecast-temp-now')
-    Object.entries(data.hourly.apparent_temperature).forEach(([keys, val]) => {
-      console.log(keys,val);
-      if(+keys === hr.getHours()){
-       nowTemp.innerText = val
+    // 24hr forecast
+    let nowTemp = document.querySelector(".forecast-temp-now");
+    let threeAM = document.querySelector(".threeAM");
+    let sixAm = document.querySelector(".sixAm");
+    let nineAM = document.querySelector(".nineAm");
+    let twelvePM = document.querySelector(".twelvePM");
+    let threePM = document.querySelector(".threePM");
+    let sixPM = document.querySelector(".sixPM");
+    let ninePM = document.querySelector(".ninePM");
+    Object.entries(data.hourly.temperature_2m).forEach(([keys, val]) => {
+      console.log(keys, val);
+      if (+keys === hr.getHours()) {
+        nowTemp.innerHTML = `<span> ${val}&deg</span>`;
       }
-      // if (keys === '0') {
-      //   console.log('12 am', keys)
-      // }
-      if (keys === '3') {
-        console.log('3 am', keys)
+      if (keys === "3") {
+        threeAM.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '6') {
-        console.log('6 am', keys)
+      if (keys === "6") {
+        sixAm.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '9') {
-        console.log('9 am', keys)
+      if (keys === "9") {
+        nineAM.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '12') {
-        console.log('12 pm', keys)
+      if (keys === "12") {
+        twelvePM.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '15') {
-        console.log('3 pm', keys)
+      if (keys === "15") {
+        threePM.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '18') {
-        console.log('6 pm', keys)
+      if (keys === "18") {
+        sixPM.innerHTML = `<span> ${val}&deg</span>`;
       }
-      if (keys === '21') {
-        console.log('9 pm', keys)
+      if (keys === "21") {
+        ninePM.innerHTML = `<span> ${val}&deg</span>`;
       }
-    })
-
-
+    });
 
     // For lat long
     console.log("Geolocation Function", lat);
