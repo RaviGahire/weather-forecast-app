@@ -42,30 +42,11 @@ const forecastTemp = document.querySelectorAll(".forecast-temp");
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
-
-fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`)
-  .then(res => res.json())
-  .then(data => {
-    const next6Days = data.daily.time.map((date, i) => ({
-      date,
-      max: data.daily.temperature_2m_max[i],
-      min: data.daily.temperature_2m_min[i],
-      rain: data.daily.precipitation_sum[i],
-      code: data.daily.weathercode[i] // weather condition
-    })).slice(1, 7); // skip today, take next 6 days
-
-    console.log('from next 6 day',next6Days);
-  });
-
-
-
-
-
   try {
     const response = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&hourly=temperature_2m,precipitation_probability,apparent_temperature,uv_index&forecast_days=1&daily=weather_code,sunrise,sunset,temperature_2m_max,temperature_2m_min,uv_index_max&timezone=auto`
     );
-   
+
     const data = await response.json();
     currTemp.innerText = data.current_weather.temperature;
     GMT_time.innerText = data.current_weather.time || "00:00";
@@ -88,7 +69,21 @@ fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&d
         weatherImageContainer.innerHTML = val.icon;
       }
     });
-
+    
+   // next 6 days forecast
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`)
+      .then(res => res.json())
+      .then(data => {
+        const next6Days = data.daily.time.map((date, i) => ({
+          date, max: data.daily.temperature_2m_max[i],
+          min: data.daily.temperature_2m_min[i],
+          rain: data.daily.precipitation_sum[i],
+          code: data.daily.weathercode[i] // weather condition
+        })).slice(1, 7); // skip today, take next 6 days
+ const a = widgetAssets.map(([keys ,val])=> console.log('from Assets',Number(keys)) )
+ const b= next6Days.map((d)=> console.log(d.code))
+      
+      });
     // precipitation_probability = chance of rain %
     const chanceOfRain = data.hourly.precipitation_probability;
     const crData = Object.entries(chanceOfRain);
@@ -152,6 +147,9 @@ fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&d
         ninePM.innerHTML = `<span> ${val}&deg</span>`;
       }
     });
+
+ 
+
 
     // For lat long
     console.log("Geolocation Function", lat);
