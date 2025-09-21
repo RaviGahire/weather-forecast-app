@@ -61,6 +61,7 @@ export async function getWeatherData(lat, lon) {
       }
     });
 
+
     // Widget bg-img and icon
     const widgetAssets = Object.entries(assets);
     widgetAssets.forEach(([keys, val]) => {
@@ -69,21 +70,45 @@ export async function getWeatherData(lat, lon) {
         weatherImageContainer.innerHTML = val.icon;
       }
     });
-    
-   // next 6 days forecast
+    // next 6 days forecast
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`)
       .then(res => res.json())
-      .then(data => {
-        const next6Days = data.daily.time.map((date, i) => ({
-          date, max: data.daily.temperature_2m_max[i],
-          min: data.daily.temperature_2m_min[i],
-          rain: data.daily.precipitation_sum[i],
-          code: data.daily.weathercode[i] // weather condition
-        })).slice(1, 7); // skip today, take next 6 days
- const a = widgetAssets.map(([keys ,val])=> console.log('from Assets',Number(keys)) )
- const b= next6Days.map((d)=> console.log(d.code))
-      
-      });
+      .then(data => weekwiseCodes(data));
+
+    async function weekwiseCodes(daywiseCode) {
+      const code = daywiseCode.daily.weathercode;
+      const assetCode = widgetAssets.map(([k, v]) => Number(k))
+      console.log(code)
+      console.log(assetCode)
+
+      const match = assetCode.filter(a => code.includes(a))
+      console.log(match)
+
+    }
+
+
+
+
+
+
+    //       .then(data => {
+    //         const next6Days = data.daily.time.map((date) => ({
+    //           date, max: data.daily.temperature_2m_max,
+    //           min: data.daily.temperature_2m_min,
+    //           rain: data.daily.precipitation_sum,
+    //           code: data.daily.weathercode // weather condition
+    //         })).slice(1, 7); // skip today, take next 6 days
+
+    // console.log(next6Days)
+
+
+    // const a = widgetAssets.map(([keys, val]) => console.log(val))
+    // const b = next6Days.map((d) => console.log(d.code))
+    // console.log(a)
+
+
+    // });
+
     // precipitation_probability = chance of rain %
     const chanceOfRain = data.hourly.precipitation_probability;
     const crData = Object.entries(chanceOfRain);
@@ -148,7 +173,7 @@ export async function getWeatherData(lat, lon) {
       }
     });
 
- 
+
 
 
     // For lat long
