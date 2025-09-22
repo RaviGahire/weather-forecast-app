@@ -71,24 +71,38 @@ export async function getWeatherData(lat, lon) {
       }
     });
     // next 6 days forecast
-    const dayIcon = document.querySelector('day-icon')
+
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`)
       .then(res => res.json())
       .then(data => weekwiseCodes(data));
 
     async function weekwiseCodes(daywiseCode) {
-   
+
       const assetCode = widgetAssets.map(([k, v]) => Number(k));
 
       const code = daywiseCode.daily.weathercode.map(v => Number(v));
 
       const match = code.filter(c => assetCode.includes(c));
+      // Check if match is not empty
+      if (match.length > 0) {
+        // Assuming 'day-icon' is a class or data attribute you want to target
+        // Replace '.day-icon' with the actual selector for your elements.
+        const dayIcons = document.querySelectorAll('.day-icon');
 
-if (match.every(m => assetCode.includes(m))) {
-  console.log('hello');
-}
+        for (let i = 1; i < match.length; i++) {
+          // Check if a corresponding element exists before trying to update it.
+          if (dayIcons[i]) {
+            // Find the correct asset based on the matching weather code
+            const asset = widgetAssets.find(([key]) => Number(key) === match[i]);
+            if (asset) {
+              dayIcons[i].innerHTML = asset[1].weekdayicon; // Assuming weekdayicon is in the second element of the asset array
+            }
+          }
+        }
+      }
+     
 
- 
+
 
 
     }
