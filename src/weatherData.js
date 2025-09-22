@@ -1,7 +1,7 @@
 import { citydata } from "./indianCities.js";
 import { userLocation } from "./userLocation.js";
 import { codes } from "./weatherCodes.js";
-import { weatherAssets as assets } from "./app.js";
+import { weatherAssets as assets } from "./weatherAsset.js";
 import { today as hr } from "./app.js";
 
 const mycity = document.querySelector(".city-name");
@@ -77,30 +77,31 @@ export async function getWeatherData(lat, lon) {
       .then(data => weekwiseCodes(data));
 
     async function weekwiseCodes(daywiseCode) {
+      try {
+        const assetCode = widgetAssets.map(([k, v]) => Number(k));
+        const code = daywiseCode.daily.weathercode.map(v => Number(v));
+        const match = code.filter(c => assetCode.includes(c));
+        // Check if match is not empty
+        if (match.length > 0) {
+          // Assuming 'day-icon' is a class or data attribute you want to target
+          // Replace '.day-icon' with the actual selector for your elements.
+          const dayIcons = document.querySelectorAll('.day-icon');
 
-      const assetCode = widgetAssets.map(([k, v]) => Number(k));
-
-      const code = daywiseCode.daily.weathercode.map(v => Number(v));
-
-      const match = code.filter(c => assetCode.includes(c));
-      // Check if match is not empty
-      if (match.length > 0) {
-        // Assuming 'day-icon' is a class or data attribute you want to target
-        // Replace '.day-icon' with the actual selector for your elements.
-        const dayIcons = document.querySelectorAll('.day-icon');
-
-        for (let i = 1; i < match.length; i++) {
-          // Check if a corresponding element exists before trying to update it.
-          if (dayIcons[i]) {
-            // Find the correct asset based on the matching weather code
-            const asset = widgetAssets.find(([key]) => Number(key) === match[i]);
-            if (asset) {
-              dayIcons[i].innerHTML = asset[1].weekdayicon; // Assuming weekdayicon is in the second element of the asset array
+          for (let i = 0; i < match.length; i++) {
+            // Check if a corresponding element exists before trying to update it.
+            if (dayIcons[i]) {
+              // Find the correct asset based on the matching weather code
+              const asset = widgetAssets.find(([key]) => Number(key) === match[i]);
+              if (asset) {
+                dayIcons[i].innerHTML = asset[1].weekdayicon; // Assuming weekdayicon is in the second element of the asset array
+              }
             }
           }
         }
       }
-     
+      catch (err) {
+        console.log(err)
+      }
 
 
 
