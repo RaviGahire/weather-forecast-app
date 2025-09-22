@@ -71,43 +71,28 @@ export async function getWeatherData(lat, lon) {
       }
     });
     // next 6 days forecast
+    const dayIcon = document.querySelector('day-icon')
     fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,weathercode&timezone=auto`)
       .then(res => res.json())
       .then(data => weekwiseCodes(data));
 
     async function weekwiseCodes(daywiseCode) {
-      const code = daywiseCode.daily.weathercode;
-      const assetCode = widgetAssets.map(([k, v]) => Number(k))
-      console.log(code)
-      console.log(assetCode)
+   
+      const assetCode = widgetAssets.map(([k, v]) => Number(k));
 
-      const match = assetCode.filter(a => code.includes(a))
-      console.log(match)
+      const code = daywiseCode.daily.weathercode.map(v => Number(v));
+
+      const match = code.filter(c => assetCode.includes(c));
+
+if (match.every(m => assetCode.includes(m))) {
+  console.log('hello');
+}
+
+ 
+
 
     }
 
-
-
-
-
-
-    //       .then(data => {
-    //         const next6Days = data.daily.time.map((date) => ({
-    //           date, max: data.daily.temperature_2m_max,
-    //           min: data.daily.temperature_2m_min,
-    //           rain: data.daily.precipitation_sum,
-    //           code: data.daily.weathercode // weather condition
-    //         })).slice(1, 7); // skip today, take next 6 days
-
-    // console.log(next6Days)
-
-
-    // const a = widgetAssets.map(([keys, val]) => console.log(val))
-    // const b = next6Days.map((d) => console.log(d.code))
-    // console.log(a)
-
-
-    // });
 
     // precipitation_probability = chance of rain %
     const chanceOfRain = data.hourly.precipitation_probability;
