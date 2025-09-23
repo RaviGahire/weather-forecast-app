@@ -1,4 +1,3 @@
-
 export const weatherAssets = {
   0: {
     // Clear sky
@@ -13,8 +12,7 @@ export const weatherAssets = {
     <path id="760261c7" d="M72.123 53.3573L67.4734 48.8192C62.8238 44.281 55.3129 44.3974 50.7825 48.8192L50.6633 48.9355C46.0137 53.4737 46.0137 60.8045 50.6633 65.2262L55.3129 69.7644C59.9625 74.3025 67.3542 74.3025 72.0038 69.7644L72.123 69.648C76.7727 65.2262 76.7727 57.7791 72.123 53.3573V53.3573ZM35.8799 127.364H23.7194C17.1622 127.364 11.9165 132.484 11.9165 138.884V139C11.9165 145.4 17.1622 150.52 23.7194 150.52H35.7607C42.437 150.636 47.6828 145.516 47.6828 139.116V139C47.6828 132.484 42.437 127.364 35.8799 127.364ZM143.179 11.5833H143.059C136.383 11.5833 131.137 16.7032 131.137 23.1031V34.2739C131.137 40.6738 136.383 45.7938 142.94 45.7938H143.059C149.736 45.9101 154.982 40.7902 154.982 34.3903V23.1031C154.982 16.7032 149.736 11.5833 143.179 11.5833V11.5833ZM235.456 48.9355C230.806 44.3974 223.295 44.3974 218.645 48.8192L213.996 53.3573C209.346 57.8954 209.346 65.2262 213.996 69.648L214.115 69.7644C218.765 74.3025 226.276 74.3025 230.806 69.7644L235.456 65.2262C240.105 60.6881 240.105 53.4737 235.456 48.9355V48.9355ZM213.877 224.643L218.526 229.181C223.176 233.719 230.687 233.719 235.336 229.181C239.986 224.643 239.986 217.312 235.336 212.774L230.687 208.235C226.037 203.697 218.526 203.814 213.996 208.235C209.227 212.89 209.227 220.104 213.877 224.643ZM238.436 138.884V139C238.436 145.4 243.682 150.52 250.239 150.52H262.28C268.837 150.52 274.083 145.4 274.083 139V138.884C274.083 132.484 268.837 127.364 262.28 127.364H250.239C243.682 127.364 238.436 132.484 238.436 138.884ZM143.059 69.1826C103.597 69.1826 71.5269 100.484 71.5269 139C71.5269 177.516 103.597 208.817 143.059 208.817C182.522 208.817 214.592 177.516 214.592 139C214.592 100.484 182.522 69.1826 143.059 69.1826ZM142.94 266.417H143.059C149.617 266.417 154.862 261.297 154.862 254.897V243.726C154.862 237.326 149.617 232.206 143.059 232.206H142.94C136.383 232.206 131.137 237.326 131.137 243.726V254.897C131.137 261.297 136.383 266.417 142.94 266.417ZM50.6633 229.064C55.3129 233.602 62.8238 233.602 67.4734 229.064L72.123 224.526C76.7727 219.988 76.6534 212.657 72.123 208.235L72.0038 208.119C67.3542 203.581 59.8433 203.581 55.1937 208.119L50.5441 212.657C46.0137 217.312 46.0137 224.526 50.6633 229.064Z" fill="white"></path>
   </g>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/ASEfzht0xmly47hykU06hqSFNJhaX3UFXF2l--fGW9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NzgyNzEyOC9waG90/by9sYXduLWJ5LXNl/YS1hdC1zdW5zZXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5lZjllVGVoNVo2/RXRfa2dDblhuc19s/WER5ZnYtenZ2MXB6/Zkx6QlhBbUU9",
+    bgImg: "../assets/images/clear sky.jpg",
   },
   1: {
     // Mainly clear
@@ -29,8 +27,7 @@ export const weatherAssets = {
     <path id="760261c7" d="M72.123 53.3573L67.4734 48.8192C62.8238 44.281 55.3129 44.3974 50.7825 48.8192L50.6633 48.9355C46.0137 53.4737 46.0137 60.8045 50.6633 65.2262L55.3129 69.7644C59.9625 74.3025 67.3542 74.3025 72.0038 69.7644L72.123 69.648C76.7727 65.2262 76.7727 57.7791 72.123 53.3573V53.3573ZM35.8799 127.364H23.7194C17.1622 127.364 11.9165 132.484 11.9165 138.884V139C11.9165 145.4 17.1622 150.52 23.7194 150.52H35.7607C42.437 150.636 47.6828 145.516 47.6828 139.116V139C47.6828 132.484 42.437 127.364 35.8799 127.364ZM143.179 11.5833H143.059C136.383 11.5833 131.137 16.7032 131.137 23.1031V34.2739C131.137 40.6738 136.383 45.7938 142.94 45.7938H143.059C149.736 45.9101 154.982 40.7902 154.982 34.3903V23.1031C154.982 16.7032 149.736 11.5833 143.179 11.5833V11.5833ZM235.456 48.9355C230.806 44.3974 223.295 44.3974 218.645 48.8192L213.996 53.3573C209.346 57.8954 209.346 65.2262 213.996 69.648L214.115 69.7644C218.765 74.3025 226.276 74.3025 230.806 69.7644L235.456 65.2262C240.105 60.6881 240.105 53.4737 235.456 48.9355V48.9355ZM213.877 224.643L218.526 229.181C223.176 233.719 230.687 233.719 235.336 229.181C239.986 224.643 239.986 217.312 235.336 212.774L230.687 208.235C226.037 203.697 218.526 203.814 213.996 208.235C209.227 212.89 209.227 220.104 213.877 224.643ZM238.436 138.884V139C238.436 145.4 243.682 150.52 250.239 150.52H262.28C268.837 150.52 274.083 145.4 274.083 139V138.884C274.083 132.484 268.837 127.364 262.28 127.364H250.239C243.682 127.364 238.436 132.484 238.436 138.884ZM143.059 69.1826C103.597 69.1826 71.5269 100.484 71.5269 139C71.5269 177.516 103.597 208.817 143.059 208.817C182.522 208.817 214.592 177.516 214.592 139C214.592 100.484 182.522 69.1826 143.059 69.1826ZM142.94 266.417H143.059C149.617 266.417 154.862 261.297 154.862 254.897V243.726C154.862 237.326 149.617 232.206 143.059 232.206H142.94C136.383 232.206 131.137 237.326 131.137 243.726V254.897C131.137 261.297 136.383 266.417 142.94 266.417ZM50.6633 229.064C55.3129 233.602 62.8238 233.602 67.4734 229.064L72.123 224.526C76.7727 219.988 76.6534 212.657 72.123 208.235L72.0038 208.119C67.3542 203.581 59.8433 203.581 55.1937 208.119L50.5441 212.657C46.0137 217.312 46.0137 224.526 50.6633 229.064Z" fill="white"></path>
   </g>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/ASEfzht0xmly47hykU06hqSFNJhaX3UFXF2l--fGW9s/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQz/NzgyNzEyOC9waG90/by9sYXduLWJ5LXNl/YS1hdC1zdW5zZXQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PW5lZjllVGVoNVo2/RXRfa2dDblhuc19s/WER5ZnYtenZ2MXB6/Zkx6QlhBbUU9",
+    bgImg: "../assets/images/Partly cloudy.jpg",
   },
   2: {
     // Partly cloudy
@@ -68,8 +65,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/ZjnPZFGjKW9jfKtIULPOzML5hqUP0zIBw40achpGJJM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzE1LzM0LzQzLzY5/LzM2MF9GXzE1MzQ0/MzY5NTRfUm5tZE1W/Q2RoZWdMRnVGVVoy/RVhMWDdhQ1VrTHB1/MG0uanBn",
+    bgImg: "../assets/images/Partly cloudy.jpg",
   },
   3: {
     // Overcast
@@ -87,8 +83,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/EJT1nP_ur82Y7rDCAITGNZyByM5kb4zAOZiDFIMY4ko/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMuc3F1YXJlc3Bh/Y2UtY2RuLmNvbS9j/b250ZW50L3YxLzYz/N2NmNzI3M2JiYjdm/N2QzMjQ4NGU0My8x/NzIwNzE0MTk5MDk2/LTQyUTQ4UkNTTE9H/TFlKSUdHM0g5L3By/ZXZpZXctZnJlZS1z/a3ktYmFja2dyb3Vu/ZC1vdmVyY2FzdC1z/dG9jay1waG90by1n/bGVubi1tZWxpbmct/MDAwMi5qcGc",
+    bgImg: "../assets/images/Overcast.jpg",
   },
   45: {
     // Fog
@@ -107,8 +102,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/Pa-Jr6qKA8oM0AbaF95hlzKe7UP2qwk7pMMvqJto744/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMjE5/NDk3OTQ3Mi9waG90/by9mb2dneS1tb3Vu/dGFpbi1yb2FkLXRo/cm91Z2gtZGVuc2Ut/Zm9yZXN0LXRlbmVy/aWZlLndlYnA_YT0x/JmI9MSZzPTYxMng2/MTImdz0wJms9MjAm/Yz1Lbi0yUzRfUGRi/aVd2WFBuaW5Rdkdl/Vnh6R2I3dVlXS3VM/ampoOG9Sejc4PQ",
+    bgImg: "../assets/images/fog.jpg",
   },
   48: {
     // Depositing rime fog
@@ -127,8 +121,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/J4vBMh38L4U6TBXm5R5qQkJcg3X2uVs5Opv1pcHypX4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvOTM0/MjkyMDMvcGhvdG8v/d2ludGVyLWluLWhv/bGxhbmQuanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPVRiN25t/blBrOGNxWGgtU1RT/SXVaZk5VNTREeXJ1/azdxMHVlWkVDdFdF/eU09",
+    bgImg: "../assets/images/fog.jpg",
   },
   51: {
     // Light drizzle
@@ -173,8 +166,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/AiormdJ544MNxj6Y_XogLrVmXN5WkZFzNtoXdK4YUEs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9saWdo/dC1yYWluLWNsb3Vk/eS13ZWF0aGVyLTIy/OTczMDAxNC5qcGc",
+    bgImg: "../assets/images/Light drizzle.jpg",
   },
   53: {
     // Moderate drizzle
@@ -219,7 +211,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg: "https://example.com/moderate-drizzle.jpg",
+    bgImg: "../assets/images/Light drizzle.jpg",
   },
   55: {
     // Dense drizzle
@@ -246,7 +238,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg: "https://example.com/dense-drizzle.jpg",
+    bgImg: "../assets/images/Light drizzle.jpg",
   },
   61: {
     // Rain
@@ -273,8 +265,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg:
-      "../assets/images/slight-rain.jpg",
+    bgImg: "../assets/images/slight-rain.jpg",
   },
   63: {
     // Moderate rain
@@ -301,7 +292,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg: "https://example.com/moderate-rain.jpg",
+    bgImg: "../assets/images/Moderate drizzle.jpg",
   },
   65: {
     // Heavy rain
@@ -328,7 +319,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg: "https://example.com/heavy-rain.jpg",
+    bgImg: "../assets/images/Heavy rain.jpg",
   },
   71: {
     // Snow fall
@@ -347,8 +338,7 @@ export const weatherAssets = {
     </clipPath>
   </defs>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/_TtVY-YItzBcT8MTqt87mYFJab5lZT7X3kr1_-vplJA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTIz/MDE1MzI1L3ZlY3Rv/ci9jaHJpc3RtYXMt/dmlsbGFnZS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9NWxv/LUZrR2dRTWhlR01v/T3psSVJNQmM4R0Qx/UVlZZksyNEUtQ210/TGEtbz0",
+    bgImg: "../assets/images/Snow fall.jpg",
   },
   80: {
     // Rain showers
@@ -415,8 +405,7 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg:
-      "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    bgImg: "../assets/images/Thunderstorm with hail.jpg",
   },
   99: {
     // Thunderstorm with hail
@@ -437,7 +426,6 @@ export const weatherAssets = {
     </g>
   </g>
 </svg>`,
-    bgImg:
-      "https://imgs.search.brave.com/lgmX3nH79v9DoBJI-F-rBkiy7HGGnRn2lk7OAsjq8KI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zb3V0/aGVybnBsYWluc3Bo/b3RvZ3JhcGh5LmNv/bS9jZG4vc2hvcC9m/aWxlcy9kYXJrbmVz/cy1mYWxscy1saWdo/dG5pbmctc3Rvcm0t/dGh1bmRlcnN0b3Jt/LXdlYXRoZXItbmln/aHQta2Fuc2FzLW1v/b2R5LWxhbmRzY2Fw/ZS1waG90b2dyYXBo/eS1wcmludC5qcGc_/dj0xNzU2MTk4NTQw/JndpZHRoPTUzMw",
+    bgImg: "../assets/images/Thunderstorm with hail.jpg",
   },
 };
