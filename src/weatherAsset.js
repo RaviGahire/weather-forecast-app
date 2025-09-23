@@ -274,7 +274,7 @@ export const weatherAssets = {
   </g>
 </svg>`,
     bgImg:
-      "https://imgs.search.brave.com/pxWjIJQ5jp2aaiMvcYJpphao8MypjFyb_P7BHPRgiyY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by93/ZWF0aGVyLWVmZmVj/dHMtY29tcG9zaXRp/b25fMjMtMjE0OTg1/MzI5NS5qcGc_c2Vt/dD1haXNfaHlicmlk",
+      "../assets/images/slight-rain.jpg",
   },
   63: {
     // Moderate rain
