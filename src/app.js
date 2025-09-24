@@ -49,5 +49,8 @@ currDate.innerText = date;
 const time = `${today.getHours()}:${today.getMinutes()}`;
 currTime.innerText = time;
 
-// Widget icon and background images object
+
+
+
+
 

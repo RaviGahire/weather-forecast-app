@@ -6,11 +6,13 @@ import { today as hr } from "./app.js";
 
 const mycity = document.querySelector(".city-name");
 const myState = document.querySelector(".state-name");
+const shimmer = document.querySelector('.shimmer')
 
 userLocation(); // Call to the location function
 
 // Coordinates match with the userlocation lat,lon to get city name. #Improved Function
 export async function getCityName(lat, lon) {
+
   const a = Math.floor(lat);
   const b = Math.floor(lon);
 
@@ -184,4 +186,5 @@ export async function getWeatherData(lat, lon) {
   } catch (err) {
     console.log(err);
   }
+  shimmer.style.display = 'none'
 }

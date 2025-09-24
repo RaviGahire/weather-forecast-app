@@ -91,7 +91,6 @@ button {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-
 /* =================Body==================== */
 body {
   background: #60a5fa;
@@ -187,7 +186,6 @@ body {
   width: 100%;
   max-width: 1500px;
   margin: auto;
-
 }
 .dwu-container {
   margin-top: var(--space-md);
@@ -198,8 +196,27 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: var(--color-white);
+  overflow: hidden;
 }
-
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+@keyframes shimmer {
+  100% {
+    left: 100%;
+  }
+}
 .weather-info-card {
   min-height: 318px;
   display: flex;
@@ -228,16 +245,22 @@ body {
 }
 
 .weather-type {
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgb(0, 0, 49, 0.5);
+  letter-spacing: 2.5px;
   padding-block: var(--space-xl);
-  font-size: var(--font-size-2xl);
-  font-weight: 400;
-}
-.temperature-info {
   font-size: var(--font-size-2xl);
   font-weight: 600;
 }
+.temperature-info {
+  font-size: var(--font-size-2xl);
+  text-shadow: 0 0 5px rgb(0, 0, 49, 0.5);
+  font-weight: 600;
+}
 .date-and-day {
-  font-weight: 400;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1.5px;
 }
 
 .weather-image {
