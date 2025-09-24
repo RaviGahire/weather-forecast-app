@@ -50,11 +50,12 @@ export async function getWeatherData(lat, lon) {
     );
 
     const data = await response.json();
+    //current Temp
     currTemp.innerHTML = `${data.current_weather.temperature}&deg;C`;
-    // gmt time
-    GMT_time.innerText = new Date(data.current_weather.time.includes(":") ? data.current_weather.time : data.current_weather.time + ":00")
+    // GMT time
+    GMT_time.innerText = new Date(data.current_weather.time.includes(":") ? data.current_weather.time : data.current_weather.time + ":00" )
       .toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-
+    //Weendspeed
     windSpeed.innerHTML = `<span>${data.current_weather.windspeed}km/hr</span>`;
 
     // Weather Code
