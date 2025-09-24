@@ -192,6 +192,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -207,7 +208,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.842),
     transparent
   );
   animation: shimmer 1.5s infinite;
