@@ -6,7 +6,7 @@ import { today as hr } from "./app.js";
 
 const mycity = document.querySelector(".city-name");
 const myState = document.querySelector(".state-name");
-const shimmer = document.querySelector('.shimmer')
+const shimmer = document.querySelector('.shimmer');
 
 userLocation(); // Call to the location function
 
@@ -39,8 +39,7 @@ const windSpeed = document.querySelector(".wind");
 const cor = document.querySelector(".chance-of-rain");
 const UVIndex = document.querySelector(".UV-index");
 
-// 24hr forecast
-const forecastTemp = document.querySelectorAll(".forecast-temp");
+
 
 // Weather API Data
 export async function getWeatherData(lat, lon) {
@@ -53,7 +52,7 @@ export async function getWeatherData(lat, lon) {
     //current Temp
     currTemp.innerHTML = `${data.current_weather.temperature}&deg;C`;
     // GMT time
-    GMT_time.innerText = new Date(data.current_weather.time.includes(":") ? data.current_weather.time : data.current_weather.time + ":00" )
+    GMT_time.innerText = new Date(data.current_weather.time.includes(":") ? data.current_weather.time : data.current_weather.time + ":00")
       .toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
     //Weendspeed
     windSpeed.innerHTML = `<span>${data.current_weather.windspeed}km/hr</span>`;
@@ -89,7 +88,7 @@ export async function getWeatherData(lat, lon) {
         const match = code.filter(c => assetCode.includes(c));
         // Check if match is not empty
         if (match.length > 0) {
-          // Assuming 'day-icon' is a class or data attribute you want to target
+          
           // Replace '.day-icon' with the actual selector for your elements.
           const dayIcons = document.querySelectorAll('.day-icon');
 
@@ -99,7 +98,11 @@ export async function getWeatherData(lat, lon) {
               // Find the correct asset based on the matching weather code
               const asset = widgetAssets.find(([key]) => Number(key) === match[i]);
               if (asset) {
-                dayIcons[i].innerHTML = asset[1].weekdayicon; // Assuming weekdayicon is in the second element of the asset array
+                dayIcons[i].innerHTML = asset[1].weekdayicon;
+                // const shimmer = document.querySelector('.shimmer');
+                document.querySelector(" aside.aside-left > div > div.week-forecast > div.shimmer").style.display ='none'
+              
+                // Assuming weekdayicon is in the second element of the asset array
               }
             }
           }
@@ -113,7 +116,7 @@ export async function getWeatherData(lat, lon) {
 
 
     }
-
+ const allShimmer =document.querySelectorAll("body > main > section.weather-dashbord > div > aside.aside-left > div > div.conditions-grid > div > div.shimmer")
 
     // precipitation_probability = chance of rain %
     const chanceOfRain = data.hourly.precipitation_probability;
@@ -141,6 +144,7 @@ export async function getWeatherData(lat, lon) {
         UVIndex.innerHTML = `<span>${val}</span>`;
       }
     });
+allShimmer.forEach((d)=>{ d.style.display = 'none'})
 
     // 24hr forecast
     let nowTemp = document.querySelector(".forecast-temp-now");
