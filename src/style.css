@@ -435,26 +435,7 @@ body {
   border-radius: var(--radius-xl);
 }
 
-.temp-point {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--color-snowy);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: pulse 2s ease-in-out infinite;
-}
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: translateY(-50%) scale(1);
-  }
-  50% {
-    transform: translateY(-50%) scale(1.5);
-  }
-}
 
 .forecast-item {
   display: flex;
@@ -476,23 +457,7 @@ body {
   color: var(--color-sunny);
 }
 
-.weather-icon {
-  font-size: 32px;
-  animation: weatherBounce 3s ease-in-out infinite;
-}
 
-@keyframes weatherBounce {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25% {
-    transform: translateY(-5px) rotate(-5deg);
-  }
-  75% {
-    transform: translateY(-5px) rotate(5deg);
-  }
-}
 
 .forecast-time {
   font-size: var(--font-size-sm);
@@ -586,24 +551,6 @@ body {
     rgba(118, 75, 162, 0.1)
   );
   transform: translateX(5px);
-}
-
-.condition-icon {
-  font-size: 28px;
-  animation: conditionFloat 4s ease-in-out infinite;
-}
-
-@keyframes conditionFloat {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  33% {
-    transform: translateY(-3px) rotate(5deg);
-  }
-  66% {
-    transform: translateY(-3px) rotate(-5deg);
-  }
 }
 
 .condition-text {
