@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./app.js" defer type="module"></script>
-    <script src="./weatherData.js" defer type="module"></script>
+    <script src="./app.js" type="module"></script>
+    <script src="./weatherData.js" type="module"></script>
+    <script src="./AI-agent.js" type="module"></script>
 
 
     </script>
@@ -26,9 +27,9 @@
             </div>
             <!-- Top Search bar -->
             <div class="top-search-bar">
-                <form action="submit">
-                    <input type="text" placeholder="Enter Your City Name">
-                    <button class="search-btn"><svg width="20" height="20" viewBox="0 0 30 30" fill="none"
+                <form>
+                    <input id="user_city" type="text" placeholder="Enter Your City Name">
+                    <button id="search-q" class="search-btn"><svg width="20" height="20" viewBox="0 0 30 30" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g id="244c6209">
                                 <g id="c690eb00">
@@ -129,7 +130,9 @@
                     </div>
                 </div>
                 <!-- weather-image-card -->
-                <div class="weather-image"></div>
+                <div class="weather-image">
+                    <p id="output"></p>
+                </div>
             </div>
         </section>
 
@@ -266,72 +269,27 @@
                     </div>
                     <!-- 24 hr forecast -->
                     <div class="card forecast-section glass-effect">
-                        <h3><svg width="20" height="20" viewBox="0 0 17 17" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g id="7b28219f">
-                                    <path id="38e2ee92"
-                                        d="M8.1883 0.0235596C3.66495 0.0235596 -0.000183105 3.68869 -0.000183105 8.21204C-0.000183105 12.7354 3.66495 16.4005 8.1883 16.4005C12.7116 16.4005 16.3768 12.7354 16.3768 8.21204C16.3768 3.68869 12.7116 0.0235596 8.1883 0.0235596ZM8.85755 8.88129H4.409V8.21204H8.1883V3.17298H8.85755V8.88129Z"
-                                        fill="white"></path>
-                                </g>
-                            </svg> 24-hour forecast</h3>
-                        <div class="forecast-chart">
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp forecast-temp-now">°</div>
-                                <div class="weather-icon">
-                                    
-                                </div>
-                                <div class="forecast-time">Now</div>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <h3><svg width="20" height="20" viewBox="0 0 17 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g id="7b28219f">
+                                        <path id="38e2ee92"
+                                            d="M8.1883 0.0235596C3.66495 0.0235596 -0.000183105 3.68869 -0.000183105 8.21204C-0.000183105 12.7354 3.66495 16.4005 8.1883 16.4005C12.7116 16.4005 16.3768 12.7354 16.3768 8.21204C16.3768 3.68869 12.7116 0.0235596 8.1883 0.0235596ZM8.85755 8.88129H4.409V8.21204H8.1883V3.17298H8.85755V8.88129Z"
+                                            fill="white"></path>
+                                    </g>
+                                </svg> 24-hour forecast</h3>
+                            <div style="  margin-bottom: 25px;">
+
+                                <img class="right-arrow" src="../assets/icons/Arrow.svg" alt="navigation-arrow" width="8px" style="transform: rotate(180deg); cursor: pointer;">
+                                &nbsp;
+                                  &nbsp;
+                                <img class="left-arrow" src="../assets/icons/Arrow.svg" alt="navigation-arrow" width="8px" style="cursor: pointer;">
+
                             </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp threeAM">°</div>
-                                <div class="weather-icon">
-                                  
-                                </div>
-                                <div class="forecast-time">3-am</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp sixAm">°</div>
-                                <div class="weather-icon">
-                                  
-                                </div>
-                                <div class="forecast-time">6-am</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp nineAm">°</div>
-                                <div class="weather-icon">
-                                 
-                                </div>
-                                <div class="forecast-time">9-am</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp twelvePM">°</div>
-                                <div class="weather-icon">
-                                  
-                                </div>
-                                <div class="forecast-time">12-pm</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp threePM">°</div>
-                                <div class="weather-icon">
-                                   
-                                </div>
-                                <div class="forecast-time">3-pm</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp sixPM">°</div>
-                                <div class="weather-icon">
-                                 
-                                </div>
-                                <div class="forecast-time">6-pm</div>
-                            </div>
-                            <div class="forecast-item glass-effect">
-                                <div class="forecast-temp ninePM">°</div>
-                                <div class="weather-icon">
-                                   
-                                </div>
-                                <div class="forecast-time">9-pm</div>
-                            </div>
+
                         </div>
+
+                        <div class="forecast-chart"></div>
                     </div>
                 </div>
                 <!-- aside-left -->

@@ -50,6 +50,28 @@ const time = `${today.getHours()}:${today.getMinutes()}`;
 currTime.innerText = time;
 
 
+// scroll cauresole
+const forecastChart = document.querySelector('.forecast-chart');
+const scrollAmount = 120;
+ document.querySelector('.left-arrow').addEventListener('click', () => {
+  forecastChart.scrollBy({
+    left: -scrollAmount,
+    behavior: 'smooth'
+
+  })
+
+
+
+})
+document.querySelector('.right-arrow').addEventListener('click', () => {
+  forecastChart.scrollBy({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+
+
+})
+
 
 
 

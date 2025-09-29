@@ -424,16 +424,12 @@ body {
   align-items: center;
   position: relative;
   padding-top: 40px;
+ overflow-x: auto;
+  scroll-behavior: smooth;
+    -ms-overflow-style: none; 
+      scrollbar-width: none; 
 }
 
-.temperature-line {
-  position: absolute;
-  top: 10px;
-  left: 0;
-  right: 0;
-  height: var(--space-xl);
-  border-radius: var(--radius-xl);
-}
 
 
 
@@ -704,6 +700,7 @@ body {
   .condition-item {
     padding: var(--space-sm);
   }
+
 }
 
 @media (max-width: 991.98px) {

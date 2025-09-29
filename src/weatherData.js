@@ -88,7 +88,7 @@ export async function getWeatherData(lat, lon) {
         const match = code.filter(c => assetCode.includes(c));
         // Check if match is not empty
         if (match.length > 0) {
-          
+
           // Replace '.day-icon' with the actual selector for your elements.
           const dayIcons = document.querySelectorAll('.day-icon');
 
@@ -100,8 +100,8 @@ export async function getWeatherData(lat, lon) {
               if (asset) {
                 dayIcons[i].innerHTML = asset[1].weekdayicon;
                 // const shimmer = document.querySelector('.shimmer');
-                document.querySelector(" aside.aside-left > div > div.week-forecast > div.shimmer").style.display ='none'
-              
+                document.querySelector(" aside.aside-left > div > div.week-forecast > div.shimmer").style.display = 'none'
+
                 // Assuming weekdayicon is in the second element of the asset array
               }
             }
@@ -116,7 +116,7 @@ export async function getWeatherData(lat, lon) {
 
 
     }
- const allShimmer =document.querySelectorAll("body > main > section.weather-dashbord > div > aside.aside-left > div > div.conditions-grid > div > div.shimmer")
+    const allShimmer = document.querySelectorAll("body > main > section.weather-dashbord > div > aside.aside-left > div > div.conditions-grid > div > div.shimmer")
 
     // precipitation_probability = chance of rain %
     const chanceOfRain = data.hourly.precipitation_probability;
@@ -144,7 +144,7 @@ export async function getWeatherData(lat, lon) {
         UVIndex.innerHTML = `<span>${val}</span>`;
       }
     });
-allShimmer.forEach((d)=>{ d.style.display = 'none'})
+    allShimmer.forEach((d) => { d.style.display = 'none' })
 
     // 24hr forecast
     let nowTemp = document.querySelector(".forecast-temp-now");
@@ -155,33 +155,62 @@ allShimmer.forEach((d)=>{ d.style.display = 'none'})
     let threePM = document.querySelector(".threePM");
     let sixPM = document.querySelector(".sixPM");
     let ninePM = document.querySelector(".ninePM");
-    Object.entries(data.hourly.temperature_2m).forEach(([keys, val]) => {
-      // console.log(keys, val);
-      if (+keys === hr.getHours()) {
-        nowTemp.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "3") {
-        threeAM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "6") {
-        sixAm.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "9") {
-        nineAM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "12") {
-        twelvePM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "15") {
-        threePM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "18") {
-        sixPM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-      if (keys === "21") {
-        ninePM.innerHTML = `<span> ${val}&deg</span>`;
-      }
-    });
+
+    const container = document.querySelector('.forecast-chart');
+    data.hourly.temperature_2m.map((val, index) => {
+
+      const timeStr = data.hourly.time[index];
+      const date = new Date(timeStr);
+      let hours = date.getHours();
+      const ampm = hours >= 12 ? "Pm" : "Am";
+
+      const elem = document.createElement('div');
+      elem.classList.add('forecast-item')
+      elem.innerHTML = `<div class="forecast-temp forecast-temp-now">${val}°</div>
+                                <div class="weather-icon">
+
+                                </div>
+                                <div class="forecast-time">${hours}${ampm}</div>`
+
+
+      container.append(elem)
+
+
+    })
+
+
+
+
+
+
+
+    // Object.entries(data.hourly.temperature_2m).forEach(([keys, val]) => {
+    //   // console.log(keys, val);
+    //   if (+keys === hr.getHours()) {
+    //     nowTemp.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "3") {
+    //     threeAM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "6") {
+    //     sixAm.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "9") {
+    //     nineAM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "12") {
+    //     twelvePM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "15") {
+    //     threePM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "18") {
+    //     sixPM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    //   if (keys === "21") {
+    //     ninePM.innerHTML = `<span> ${val}&deg</span>`;
+    //   }
+    // });
 
 
 
